@@ -43,7 +43,7 @@ function createWindow() {
   if (process.argv.find((arg) => arg === '--debug')) {
     win.loadURL('http://localhost:8080')
   } else {
-    win.loadFile('../public/index.html')
+    win.loadFile('./public/index.html')
   }
   win.on('closed', () => {
     win = null
