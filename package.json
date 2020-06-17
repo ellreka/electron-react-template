@@ -1,15 +1,15 @@
 {
   "name": "electron-react-template",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "",
-  "private": true,
-  "main": "main.js",
+  "main": "main/index.js",
   "author": "ellreka",
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "electron": "electron . --debug",
     "electron:build": "yarn build && electron-builder --mac --win --x64",
+    "release": "yarn electron:build --publish always",
     "eslint": "eslint src --ext .ts,.tsx"
   },
   "build": {
@@ -18,9 +18,8 @@
       "output": "./release"
     },
     "files": [
-      "./public/*.js",
-      "./public/index.html",
-      "./main.js",
+      "./public/*",
+      "./main/index.js",
       "./icon/*"
     ],
     "mac": {
@@ -28,7 +27,10 @@
       "target": [
         "dmg",
         "zip"
-      ]
+      ],
+      "publish": {
+        "provider": "github"
+      }
     },
     "win": {
       "icon": "./icon/icon.ico",
