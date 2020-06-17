@@ -1,0 +1,96 @@
+{
+  "name": "electron-react-template",
+  "version": "1.0.1",
+  "description": "",
+  "private": true,
+  "main": "main.js",
+  "author": "ellreka",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "electron": "electron . --debug",
+    "electron:build": "yarn build && electron-builder --mac --win --x64"
+  },
+  "build": {
+    "productName": "electron-react-template",
+    "directories": {
+      "output": "./release"
+    },
+    "files": [
+      "./public/*.js",
+      "./public/index.html",
+      "./main.js",
+      "./icon/*"
+    ],
+    "mac": {
+      "icon": "./icon/icon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "./icon/icon.ico",
+      "target": [
+        "zip"
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "electron-log": "^4.0.5",
+    "electron-updater": "^4.2.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
+    "autoprefixer": "^9.8.0",
+    "babel-eslint": "^10.0.3",
+    "css-loader": "^3.6.0",
+    "electron": "^7.1.10",
+    "electron-builder": "^22.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-config-standard-with-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "eslint-plugin-standard": "^4.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.3",
+    "mini-css-extract-plugin": "^0.9.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^1.19.1",
+    "tailwindcss": "^1.4.6",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
